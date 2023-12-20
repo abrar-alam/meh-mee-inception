@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <section class="title-and-form">
+        <h1 id="main-header">
+            No MehMe
+        </h1>
+        <h3 id="description">
+            Fill out the form below to start generating memes!
+        </h3>
+
+        <form action="" method="get" class="form-data">
+            <section class="form-data-section">
+                <div class="form-data-section">
+                    <label for="image-url">Image URL: </label>
+                    <input type="url" name="image-url" id="image-url"  required />
+                  </div>
+                  <div class="form-data-section">
+                    <label for="upper-text">Upper Text: </label>
+                    <input type="text" name="upper-text" id="upper-text" required />
+                  </div>
+                  <div class="form-data-section">
+                    <label for="lower-text">Bottom Text: </label>
+                    <input type="text" name="lower-text" id="lower-text" required />
+                  </div>
+            </section>
+            
+            <div class="submit-button">
+              <input type="submit" value="Generate!" />
+            </div>
+          </form>
+
+    </section>
+    <script src="app.js"></script>
+</body>
+</html>

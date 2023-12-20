@@ -1,0 +1,56 @@
+#main-header {
+    text-align: center;
+}
+
+#description {
+    text-align: center;
+}
+
+section.form-data-section {
+    display: table;
+    margin-left:auto; 
+    margin-right: auto;
+    position: relative;
+  }
+  
+  div.form-data-section {
+    display: table-row;
+    /* float: left; */
+  }
+  
+
+  div.form-data-section label, div.form-data-section input{
+    display: table-cell;
+    margin-bottom: 10px;
+    /* width: 100%; */
+  }
+
+  /* input.form-example{
+    display: table-cell;
+    margin-bottom: 10px;
+  } */
+  /* label,
+  input {
+    display: table-cell;
+    margin-bottom: 10px;
+  } */
+  
+  div.form-data-section label {
+    padding-right: 10px;
+    
+    /* width: 10%; */
+  }
+
+  div.form-data-section input {
+    width: 100%;
+    /* inline-size: 400%; */
+  }
+
+  div.submit-button{
+    text-align: center;
+  }
+
+/* input {
+    width: 70%;
+} */
+  
