@@ -6,6 +6,10 @@
     text-align: center;
 }
 
+section.title-and-form{
+  padding: 1%;
+  background-color: purple;
+}
 section.form-data-section {
     display: table;
     margin-left:auto; 
@@ -34,6 +38,10 @@ section.form-data-section {
     display: table-cell;
     margin-bottom: 10px;
   } */
+
+  body {
+    background-color: black;
+  }
   
   div.form-data-section label {
     padding-right: 10px;
@@ -50,7 +58,59 @@ section.form-data-section {
     text-align: center;
   }
 
-/* input {
-    width: 70%;
-} */
+  /* img{
+    display: inline;
+    padding: 10%;
+    margin-left:auto; 
+    margin-right: auto;
+  } */
+  .image-container {
+    padding-top: 2%;
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Adjust the width as needed */
+    margin: auto;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.text-overlay-top {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    right: 10%;
+    /* transform: translate(-50%, -50%); */
+    text-align: center;
+   
+    color: white; /* Set the text color */
+}
+
+.text-overlay-top p {
+    /* font-size: 240px; */
+    font-family: 'Arial', sans-serif;
+    font-size: 200%;
+    /* Add more styles as needed */
+}
+
+.text-overlay-bottom {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    right: 10%;
+    /* transform: translate(-50%, -50%); */
+    text-align: center;
+   
+    color: white; /* Set the text color */
+}
+
+.text-overlay-bottom p {
+    /* font-size: 240px; */
+    font-family: 'Arial', sans-serif;
+    font-size: 200%;
+    /* Add more styles as needed */
+}
   
