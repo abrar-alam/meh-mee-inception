@@ -139,7 +139,7 @@ img.mouseover, div.text-overlay-top.mouseover, div.text-overlay-bottom.mouseover
   size: 100%;
   color:white;
   background-color: aqua;
-  /* display: none; */
+  display: none; 
  
   /* Set the text color */
 }
@@ -162,5 +162,5 @@ img.mouseover, div.text-overlay-top.mouseover, div.text-overlay-bottom.mouseover
   /* margin: 4px 2px;
   cursor: pointer;  */
   transform: translate(-50%, -50%);
-  display:inline;
+  /* display:inline; */
 }

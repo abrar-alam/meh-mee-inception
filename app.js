@@ -28,7 +28,8 @@ mem_sect.addEventListener("mouseover", function(e){
         element = document.querySelectorAll("section.memes-section")[idx];
         element.querySelector("div.text-overlay-top").classList.add("mouseover");
         element.querySelector("div.text-overlay-bottom").classList.add("mouseover");
-        
+        element.querySelector("div.button-overlay").style.display = "inline";
+
 
     }
 
