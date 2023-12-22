@@ -72,11 +72,25 @@ section.form-data-section {
     margin: auto;
 }
 
+
+
 img {
     width: 100%;
     height: auto;
     display: block;
 }
+
+img.mouseover, div.text-overlay-top.mouseover, div.text-overlay-bottom.mouseover{
+  
+  opacity: 0.5;
+}
+
+/* img.clicked {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0.5;
+} */
 
 .text-overlay-top {
     position: absolute;
@@ -113,4 +127,40 @@ img {
     font-size: 200%;
     /* Add more styles as needed */
 }
-  
+
+.button-overlay {
+  position: absolute;
+  bottom: 50%;
+  top: 50%;
+  left: 50%;
+  right: 50%;
+  /* transform: translate(-50%, -50%); */
+  text-align: center;
+  size: 100%;
+  color:white;
+  background-color: aqua;
+  /* display: none; */
+ 
+  /* Set the text color */
+}
+
+.button {
+  background-color: white;
+  /* margin: 4px 8px; */
+  /* border: none; */
+  /* color: white; */
+  /* padding: 15px 32px; */
+  /* text-align: center; */
+  /* text-decoration: none; */
+  /* position: absolute; */
+  /* bottom: 50%;
+  top: 50%;
+  left: 50%;
+  right: 50%; */
+  /* display: inline-block; */
+  font-size: 32px;
+  /* margin: 4px 2px;
+  cursor: pointer;  */
+  transform: translate(-50%, -50%);
+  display:inline;
+}
