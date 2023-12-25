@@ -1,61 +1,16 @@
 const memeSection = document.querySelector("section.memes-section");
 const form = document.querySelector("form.form-data");
-// let selected_item_idx = null;
-
-
-const memes = memeSection.querySelectorAll("div.image-container");
-
-// console.log(memes);
-
-// for (let meme of memes){
-//     console.dir(meme);
-// }
-for (let meme of memes){
-    meme.addEventListener("mouseenter", function(e){
-        // console.dir(e);
-        let idx = null;
-        let element = null;
-        e.target.querySelector("img").className = "mouseover";
-        idx = Array.prototype.indexOf.call(e.target.parentElement.children, e.target);
-        console.log("idx: ", idx);
-        element = document.querySelectorAll("section.memes-section div.image-container")[idx];
-        console.dir(element);
-        element.querySelector("div.text-overlay-top").classList.add("mouseover");
-        element.querySelector("div.text-overlay-bottom").classList.add("mouseover");
-        element.querySelector("div.button-overlay").style.display = "inline";
-    });
-
-    meme.addEventListener("mouseleave", function(e){
-        console.dir(e);
-
-        let idx = null;
-        let element = null;
-        e.target.querySelector("img").className = "";
-        idx = Array.prototype.indexOf.call(e.target.parentElement.children, e.target);
-        console.log("idx: ", idx);
-        element = document.querySelectorAll("section.memes-section div.image-container")[idx];
-        console.dir(element);
-        element.querySelector("div.text-overlay-top").classList.remove("mouseover");
-        element.querySelector("div.text-overlay-bottom").classList.remove("mouseover");
-        element.querySelector("div.button-overlay").style.display = "none";
-    });
-
-    meme.querySelector("div.button-overlay button").addEventListener(
-        "click", function(e){
-            e.target.parentElement.parentElement.remove();
-        }
-    );
-}
 
 // data submit event handling
 form.addEventListener("submit",
 function(e){
     e.preventDefault();
-    alert("Hh");
-    console.log(e);
-
+    
     let memeToAdd = createImageContainer(form.querySelector("#image-url").value, form.querySelector("#upper-text").value,
     form.querySelector("#lower-text").value);
+
+    // reset the form values
+    form.reset();
 
     memeToAdd.addEventListener("mouseenter", mouseEnter);
     memeToAdd.addEventListener("mouseleave", mouseLeave);
@@ -69,33 +24,37 @@ function(e){
     memeSection.prepend(memeToAdd);
 });
 
+ 
 function mouseEnter(e){
-    let idx = null;
-    let element = null;
+   /**
+    * The callback function to be called when mouse pointer is on a meme 
+    */
+    let idx = Array.prototype.indexOf.call(e.target.parentElement.children, e.target);;
+    let element = document.querySelectorAll("section.memes-section div.image-container")[idx];
     e.target.querySelector("img").className = "mouseover";
-    idx = Array.prototype.indexOf.call(e.target.parentElement.children, e.target);
-    console.log("idx: ", idx);
-    element = document.querySelectorAll("section.memes-section div.image-container")[idx];
-    console.dir(element);
     element.querySelector("div.text-overlay-top").classList.add("mouseover");
     element.querySelector("div.text-overlay-bottom").classList.add("mouseover");
     element.querySelector("div.button-overlay").style.display = "inline";
 }
 
 function mouseLeave(e){
-    let idx = null;
-    let element = null;
+     /**
+    * The callback function to be called when mouse pointer leaves a meme 
+    */
+
+    let idx = Array.prototype.indexOf.call(e.target.parentElement.children, e.target);
+    let element = document.querySelectorAll("section.memes-section div.image-container")[idx];
     e.target.querySelector("img").className = "";
-    idx = Array.prototype.indexOf.call(e.target.parentElement.children, e.target);
-    console.log("idx: ", idx);
-    element = document.querySelectorAll("section.memes-section div.image-container")[idx];
-    console.dir(element);
     element.querySelector("div.text-overlay-top").classList.remove("mouseover");
     element.querySelector("div.text-overlay-bottom").classList.remove("mouseover");
     element.querySelector("div.button-overlay").style.display = "none";
 }
 
 function createImageContainer(imageUrl, topText, bottomText){
+
+     /**
+    * A helper function for crearing the layout of the meme to be added
+    */
 
     console.log("URL ",  imageUrl);
     console.log("topText ", topText);

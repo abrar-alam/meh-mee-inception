@@ -29,15 +29,6 @@ section.form-data-section {
     /* width: 100%; */
   }
 
-  /* input.form-example{
-    display: table-cell;
-    margin-bottom: 10px;
-  } */
-  /* label,
-  input {
-    display: table-cell;
-    margin-bottom: 10px;
-  } */
 
   body {
     background-color: black;
@@ -45,25 +36,16 @@ section.form-data-section {
   
   div.form-data-section label {
     padding-right: 10px;
-    
-    /* width: 10%; */
   }
 
   div.form-data-section input {
     width: 100%;
-    /* inline-size: 400%; */
   }
 
   div.submit-button{
     text-align: center;
   }
 
-  /* img{
-    display: inline;
-    padding: 10%;
-    margin-left:auto; 
-    margin-right: auto;
-  } */
   .image-container {
     padding-top: 2%;
     position: relative;
@@ -71,8 +53,6 @@ section.form-data-section {
     max-width: 800px; /* Adjust the width as needed */
     margin: auto;
 }
-
-
 
 img {
     width: 100%;
@@ -85,12 +65,7 @@ img.mouseover, div.text-overlay-top.mouseover, div.text-overlay-bottom.mouseover
   opacity: 0.5;
 }
 
-/* img.clicked {
-  width: 100%;
-  height: auto;
-  display: block;
-  opacity: 0.5;
-} */
+
 
 .text-overlay-top {
     position: absolute;
@@ -146,18 +121,6 @@ img.mouseover, div.text-overlay-top.mouseover, div.text-overlay-bottom.mouseover
 
 .button {
   background-color: white;
-  /* margin: 4px 8px; */
-  /* border: none; */
-  /* color: white; */
-  /* padding: 15px 32px; */
-  /* text-align: center; */
-  /* text-decoration: none; */
-  /* position: absolute; */
-  /* bottom: 50%;
-  top: 50%;
-  left: 50%;
-  right: 50%; */
-  /* display: inline-block; */
   font-size: 32px;
   /* margin: 4px 2px;
   cursor: pointer;  */
