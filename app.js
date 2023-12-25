@@ -1,8 +1,9 @@
-const mem_sect = document.querySelector("section.memes-section");
-let selected_item_idx = null;
+const memeSection = document.querySelector("section.memes-section");
+const form = document.querySelector("form.form-data");
+// let selected_item_idx = null;
 
 
-const memes = mem_sect.querySelectorAll("div.image-container");
+const memes = memeSection.querySelectorAll("div.image-container");
 
 // console.log(memes);
 
@@ -46,65 +47,91 @@ for (let meme of memes){
     );
 }
 
-// // console.log(mem_sect);
-// mem_sect.addEventListener("mouseenter", function(e){
+// data submit event handling
+form.addEventListener("submit",
+function(e){
+    e.preventDefault();
+    alert("Hh");
+    console.log(e);
 
-//     // if (e.target.)
+    let memeToAdd = createImageContainer(form.querySelector("#image-url").value, form.querySelector("#upper-text").value,
+    form.querySelector("#lower-text").value);
+
+    memeToAdd.addEventListener("mouseenter", mouseEnter);
+    memeToAdd.addEventListener("mouseleave", mouseLeave);
+
+    memeToAdd.querySelector("div.button-overlay button").addEventListener(
+        "click", function(e){
+            e.target.parentElement.parentElement.remove();
+        }
+    );
+
+    memeSection.prepend(memeToAdd);
+});
+
+function mouseEnter(e){
+    let idx = null;
+    let element = null;
+    e.target.querySelector("img").className = "mouseover";
+    idx = Array.prototype.indexOf.call(e.target.parentElement.children, e.target);
+    console.log("idx: ", idx);
+    element = document.querySelectorAll("section.memes-section div.image-container")[idx];
+    console.dir(element);
+    element.querySelector("div.text-overlay-top").classList.add("mouseover");
+    element.querySelector("div.text-overlay-bottom").classList.add("mouseover");
+    element.querySelector("div.button-overlay").style.display = "inline";
+}
+
+function mouseLeave(e){
+    let idx = null;
+    let element = null;
+    e.target.querySelector("img").className = "";
+    idx = Array.prototype.indexOf.call(e.target.parentElement.children, e.target);
+    console.log("idx: ", idx);
+    element = document.querySelectorAll("section.memes-section div.image-container")[idx];
+    console.dir(element);
+    element.querySelector("div.text-overlay-top").classList.remove("mouseover");
+    element.querySelector("div.text-overlay-bottom").classList.remove("mouseover");
+    element.querySelector("div.button-overlay").style.display = "none";
+}
+
+function createImageContainer(imageUrl, topText, bottomText){
+
+    console.log("URL ",  imageUrl);
+    console.log("topText ", topText);
+    console.log("bottomText ", bottomText);
     
-//     // if (((e.target.tagName === "DIV") && (e.target.getAttribute("class") === "image-container") )
-//     //    ||  (e.target.tagName === "IMG") 
-//     //    || ((e.target.tagName === "DIV") && (e.target.getAttribute("class") === ""))){
-//     //     console.log("Hello");
-//     // }
+    let div = document.createElement("div");
+    div.className = "image-container";
+    let img = document.createElement("img");
+    img.setAttribute("src", imageUrl);
+    img.setAttribute("alt", "meme");
+    let topTextDiv = document.createElement("div");
+    topTextDiv.className ="text-overlay-top";
+    let topTextParagraph = document.createElement("p");
+    topTextParagraph.innerText = topText;
+    let bottomTextDiv = document.createElement("div");
+    bottomTextDiv.className = "text-overlay-bottom";
+    let bottomTextParagraph = document.createElement("p");
+    bottomTextParagraph.innerText=bottomText;
+    let buttonDiv = document.createElement("div");
+    buttonDiv.className = "button-overlay";
+    let removeButton = document.createElement("button");
+    removeButton.className = "button";
+    removeButton.innerText = "Remove";
+    
+    topTextDiv.append(topTextParagraph);
+    bottomTextDiv.append(bottomTextParagraph);
+    buttonDiv.append(removeButton);
+
+    div.append(img, topTextDiv, bottomTextDiv, buttonDiv);
+
+    return div;
+    // memeSection.prepend(div);
 
 
-//     console.dir(e.target);
-
-//     let idx = null;
-//     let element = null;
-//     if ((e.target.tagName === "DIV" ) && (e.target.className === "image-container")){
-//         e.target.querySelector("img").className = "mouseover";
-//         // id = e.target.parentElement.id;
-//         // console.log("id: ", id);
-//         // element = document.querySelector(`#${id}`);
-//         // console.dir(element);
-//         // element.querySelector("div.text-overlay-top").classList.add = "mouseover";
-//         // element.querySelector("div.text-overlay-bottom").classList.add = "mouseover";
-//         idx = Array.prototype.indexOf.call(e.target.parentElement.children, e.target);
-//         // console.dir(idx);
-//         selected_item_idx = idx;
-//         element = document.querySelectorAll("section.memes-section")[idx];
-//         element.querySelector("div.text-overlay-top").classList.add("mouseover");
-//         element.querySelector("div.text-overlay-bottom").classList.add("mouseover");
-//         element.querySelector("div.button-overlay").style.display = "inline";
+}
 
 
-//     }
 
 
-// });
-
-// mem_sect.addEventListener("mouseleave", function(e){
-//     console.dir(e.target);
-//     let idx = null;
-//     let element = null;
-//     if (e.target.tagName === "IMG"){
-//         // e.target.parentElement.className = "image-container";
-//         // e.target.className = "";
-
-//         // idx = Array.prototype.indexOf.call(e.target.parentElement.parentElement.children, e.target.parentElement);
-//         // console.dir(idx);
-
-//         // if ((idx !== selected_item_idx)){
-//         //     element = document.querySelectorAll("section.memes-section")[idx];
-//         //     element.querySelector("div.text-overlay-top").classList.remove("mouseover");
-//         //     element.querySelector("div.text-overlay-bottom").classList.remove("mouseover");
-//         //     element.querySelector("div.button-overlay").style.display = "none";
-//         // }
-            
-        
-        
-
-//     }
-
-// });
